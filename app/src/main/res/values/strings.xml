@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">CodePath-WishList</string>
+    <string name="coffee_mug">Coffee Mug</string>
+    <string name="_39_99">39.99</string>
+    <string name="yeticom">https://www.yeti.com/drinkware/mugs</string>
+    <string name="text_input">Text Input</string>
+    <string name="button">Button</string>
 </resources>
