@@ -5,4 +5,8 @@
     <string name="yeticom">https://www.yeti.com/drinkware/mugs</string>
     <string name="text_input">Text Input</string>
     <string name="button">Button</string>
+    <string name="submit">Submit</string>
+    <string name="item_price">Item Price</string>
+    <string name="item_url">Item URL</string>
+    <string name="item_name">Item name</string>
 </resources>
