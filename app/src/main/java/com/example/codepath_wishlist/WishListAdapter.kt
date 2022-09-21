@@ -11,17 +11,15 @@ class WishListAdapter(var wishListModel: List<WishListModel>): RecyclerView.Adap
     class ViewHolder( itemView: View) : RecyclerView.ViewHolder(itemView) {
         // TODO: Create member variables for any view that will be set
 
-        val itemName: TextView
-        val itemPrice: TextView
-        val itemURL: TextView
+        val itemNameViewHolder: TextView
+        val itemPriceViewHolder: TextView
+        val itemURLViewHolder: TextView
 
         init {
             // TODO: Store each of the layout's views into
-            itemName = itemView.findViewById(R.id.itemName)
-            itemPrice = itemView.findViewById(R.id.itemPrice)
-            itemURL = itemView.findViewById(R.id.itemURL)
-
-
+            itemNameViewHolder = itemView.findViewById(R.id.itemNameTextView)
+            itemPriceViewHolder = itemView.findViewById(R.id.itemPriceTextView)
+            itemURLViewHolder = itemView.findViewById(R.id.itemURLTextView)
         }
 
     }
@@ -39,9 +37,9 @@ class WishListAdapter(var wishListModel: List<WishListModel>): RecyclerView.Adap
         // Get the data model based on position
         val wishListModel = wishListModel[position]
         // Set item views based on views and data model
-        holder.itemName.text = wishListModel.itemNameModel
-        holder.itemPrice.text = wishListModel.itemPriceModel
-        holder.itemURL.text = wishListModel.itemURLModel
+        holder.itemNameViewHolder.text = wishListModel.itemNameModel
+        holder.itemPriceViewHolder.text = wishListModel.itemPriceModel
+        holder.itemURLViewHolder.text = wishListModel.itemURLModel
     }
 
     fun upDateWishList(newWishListModel: List<WishListModel>) {

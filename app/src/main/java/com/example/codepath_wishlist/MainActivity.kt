@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.codepath_wishlist.R.id.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,12 +17,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //Getting recycler view
-        recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
+        recyclerView = findViewById(R.id.recyclerView)
         recyclerView.adapter = WishListAdapter(
             listOf(
-                WishListModel(itemNameModel = "Table", itemPriceModel = "59.99", itemURLModel = "www.tables.com"),
-                WishListModel(itemNameModel = "mug", itemPriceModel = "9.99", itemURLModel = "www.mugs.com"),
-                WishListModel(itemNameModel = "shirt", itemPriceModel = "39.99", itemURLModel = "www.shirt.com")))
+                WishListModel(itemNameModel = "", itemPriceModel = "", itemURLModel = "")))
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         //Button used to generate new card in RecyclerView with item info
@@ -29,20 +28,17 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.button).setOnClickListener {
             //
             addCard()
-
             }
         }
 
-    fun addCard() {
-        val itemViewInput = findViewById<TextView>(R.id.itemName).text.toString()
-        val priceViewInput = findViewById<TextView>(R.id.itemPrice).text.toString()
-        val uRLViewInput = findViewById<TextView>(R.id.itemURL).text.toString()
+    private fun addCard() {
+        val nameInputText = findViewById<TextView>(nameInput).text.toString()
+        val priceInputText = findViewById<TextView>(priceInput).text.toString()
+        val urlInputText = findViewById<TextView>(URLInput).text.toString()
 
-        val newItem = WishListModel(itemViewInput, priceViewInput, uRLViewInput)
+        val newItem = WishListModel(nameInputText, priceInputText, urlInputText)
 
         val adapter = recyclerView.adapter as WishListAdapter
         adapter.upDateWishList(adapter.wishListModel + newItem)
-
-
     }
 }
