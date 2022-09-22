@@ -15,7 +15,8 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/itemURLTextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/itemPriceTextView"
@@ -23,13 +24,15 @@
         android:layout_height="wrap_content"
         android:hint="@string/_39_99"
         android:textColorHint="#757575"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/itemURLTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:hint="@string/yeticom"
         android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"

@@ -2,7 +2,9 @@ package com.example.codepath_wishlist
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.TextKeyListener.clear
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -28,17 +30,24 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.button).setOnClickListener {
             //
             addCard()
-            }
+        }
         }
 
     private fun addCard() {
-        val nameInputText = findViewById<TextView>(nameInput).text.toString()
-        val priceInputText = findViewById<TextView>(priceInput).text.toString()
-        val urlInputText = findViewById<TextView>(URLInput).text.toString()
+        val nameInputText = findViewById<EditText>(nameInput)
+        val priceInputText = findViewById<EditText>(priceInput)
+        val urlInputText = findViewById<EditText>(URLInput)
 
-        val newItem = WishListModel(nameInputText, priceInputText, urlInputText)
+        val newItem = WishListModel(nameInputText.text.toString(), priceInputText.text.toString(), urlInputText.text.toString())
 
         val adapter = recyclerView.adapter as WishListAdapter
         adapter.upDateWishList(adapter.wishListModel + newItem)
+
+        adapter.notifyDataSetChanged()
+
+        nameInputText.setText("")
+        priceInputText.setText("")
+        urlInputText.setText("")
+
     }
 }
