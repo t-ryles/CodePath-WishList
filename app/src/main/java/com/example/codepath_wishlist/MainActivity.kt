@@ -2,10 +2,8 @@ package com.example.codepath_wishlist
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.method.TextKeyListener.clear
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.codepath_wishlist.R.id.*
@@ -27,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         //Button used to generate new card in RecyclerView with item info
         //Getting button and setting click event
-        findViewById<Button>(R.id.button).setOnClickListener {
+        findViewById<Button>(button).setOnClickListener {
             //
             addCard()
         }
