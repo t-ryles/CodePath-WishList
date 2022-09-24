@@ -10,7 +10,6 @@ class WishListAdapter(var wishListModel: List<WishListModel>): RecyclerView.Adap
 
     class ViewHolder( itemView: View) : RecyclerView.ViewHolder(itemView) {
         // TODO: Create member variables for any view that will be set
-
         val itemNameViewHolder: TextView
         val itemPriceViewHolder: TextView
         val itemURLViewHolder: TextView

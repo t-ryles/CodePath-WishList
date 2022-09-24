@@ -1,9 +1,10 @@
 package com.example.codepath_wishlist
 
+import android.annotation.SuppressLint
+import android.icu.util.UniversalTimeScale.toBigDecimal
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
+import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.codepath_wishlist.R.id.*
@@ -18,19 +19,27 @@ class MainActivity : AppCompatActivity() {
 
         //Getting recycler view
         recyclerView = findViewById(R.id.recyclerView)
+
+        //Default card
         recyclerView.adapter = WishListAdapter(
             listOf(
                 WishListModel(itemNameModel = "", itemPriceModel = "", itemURLModel = "")))
 
+
+        //Setting the layout to linear
         recyclerView.layoutManager = LinearLayoutManager(this)
+
         //Button used to generate new card in RecyclerView with item info
         //Getting button and setting click event
         findViewById<Button>(button).setOnClickListener {
             //
             addCard()
         }
-        }
 
+    }
+
+
+    @SuppressLint("NotifyDataSetChanged")
     private fun addCard() {
         val nameInputText = findViewById<EditText>(nameInput)
         val priceInputText = findViewById<EditText>(priceInput)
@@ -46,6 +55,5 @@ class MainActivity : AppCompatActivity() {
         nameInputText.setText("")
         priceInputText.setText("")
         urlInputText.setText("")
-
     }
 }
